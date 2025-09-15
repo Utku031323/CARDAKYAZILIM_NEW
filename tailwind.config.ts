@@ -47,6 +47,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        packaging: {
+          brown: "hsl(var(--packaging-brown))",
+          light: "hsl(var(--packaging-light))",
+        },
+        warehouse: {
+          gray: "hsl(var(--warehouse-gray))",
+        },
+        success: {
+          green: "hsl(var(--success-green))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
