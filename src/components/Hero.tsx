@@ -2,8 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircle, Package, Clock, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-warehouse.jpg";
+import GetStartedModal from "./GetStartedModal";
+import PriceCalculatorModal from "./PriceCalculatorModal";
+import { useState } from "react";
 
 const Hero = () => {
+  const [getStartedOpen, setGetStartedOpen] = useState(false);
+  const [priceCalculatorOpen, setPriceCalculatorOpen] = useState(false);
+
   return (
     <section className="pt-20 pb-16 bg-gradient-to-br from-background to-secondary">
       <div className="container mx-auto px-4">
@@ -36,10 +42,10 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-lg px-8">
+              <Button size="lg" className="text-lg px-8" onClick={() => setGetStartedOpen(true)}>
                 Hemen Başla
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8" onClick={() => setPriceCalculatorOpen(true)}>
                 Fiyat Hesapla
               </Button>
             </div>
@@ -88,6 +94,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      <GetStartedModal open={getStartedOpen} onOpenChange={setGetStartedOpen} />
+      <PriceCalculatorModal open={priceCalculatorOpen} onOpenChange={setPriceCalculatorOpen} />
     </section>
   );
 };
