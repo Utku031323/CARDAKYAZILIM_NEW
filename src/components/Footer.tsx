@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer id="iletisim" className="bg-packaging-brown text-white py-16">
+    <footer id="iletisim" className="bg-packaging-brown text-white py-12 sm:py-16">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -64,31 +64,31 @@ const Footer = () => {
               24 saat içinde size dönüş yapacağız.
             </p>
             <div className="space-y-2">
-              <Button variant="secondary" className="w-full">
+              <Button variant="secondary" className="w-full text-sm sm:text-base">
                 Teklif İste
               </Button>
-              <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-packaging-brown">
+              <Button variant="outline" className="w-full text-sm sm:text-base border-white text-white hover:bg-white hover:text-packaging-brown">
                 WhatsApp İletişim
               </Button>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8">
+        <div className="border-t border-white/20 mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-white/60">
-              <p>© 2025 Çardak Yazılım Ticaret Limited. Tüm hakları saklıdır.</p>
+            <div className="text-white/60 text-center md:text-left">
+              <p className="text-sm">© 2025 Çardak Yazılım Ticaret Limited. Tüm hakları saklıdır.</p>
             </div>
-            <div className="text-white/80">
-              <p>
+            <div className="text-white/80 text-center md:text-right">
+              <p className="text-sm">
                 <strong>Mehmet Sacit Kula</strong> - Genel Müdür
               </p>
             </div>
           </div>
-          
-          <div className="mt-6 text-center text-white/60">
-            <p className="text-sm">
-              Yeni fiyatlandırma 16 Mayıs 2025 tarihinden itibaren geçerlidir. 
+
+          <div className="mt-4 sm:mt-6 text-center text-white/60">
+            <p className="text-xs sm:text-sm">
+              Yeni fiyatlandırma 16 Mayıs 2025 tarihinden itibaren geçerlidir.
               Tüm fiyatlar KDV hariçtir.
             </p>
           </div>

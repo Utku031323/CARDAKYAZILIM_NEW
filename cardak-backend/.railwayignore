@@ -1,0 +1,67 @@
+# Railway Ignore File
+# Files and directories to exclude from Railway deployment
+
+# Development files
+.env
+.env.local
+.env.*.local
+.env.development
+
+# Testing
+tests/
+coverage/
+jest.config.js
+
+# Documentation
+*.md
+DEPLOYMENT_CHECKLIST.md
+README.md
+SETUP_GUIDE.md
+SIMPLIFICATION_PLAN.md
+TESTING_GUIDE.md
+TEST_STRUCTURE.md
+WEEK_13_COMPLETION_REPORT.md
+WEEK_13_TEST_SUMMARY.md
+PROJECT_SIMPLIFICATION_DETAILED.md
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs (local)
+logs/
+*.log
+
+# Node modules (will be installed by Railway)
+node_modules/
+
+# Build artifacts (will be rebuilt)
+dist/
+
+# Database (local dev)
+prisma/dev.db
+
+# Uploads (local)
+uploads/
+
+# Docker
+docker-compose.yml
+Dockerfile
+
+# Scripts
+scripts/
+
+# Test copies
+tests copy/
+

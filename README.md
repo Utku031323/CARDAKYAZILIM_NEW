@@ -1,73 +1,128 @@
-# Welcome to your Lovable project
+# Çardak Paketleme - E-Ticaret Paketleme Hizmeti
 
-## Project info
+Modern React/TypeScript tabanlı e-ticaret paketleme hizmeti web uygulaması.
 
-**URL**: https://lovable.dev/projects/7e6e0b76-c36d-4501-b26a-dade9e5327e4
+## Özellikler
 
-## How can I edit this code?
+- ⚡ **Modern Teknolojiler**: React 18, TypeScript, Vite
+- 🎨 **Modern UI**: shadcn/ui bileşenleri ve Tailwind CSS
+- 📱 **Responsive Tasarım**: Mobil ve masaüstü uyumlu
+- 🚀 **Hızlı Geliştirme**: Hot reload ve instant preview
+- 🔧 **Tip Güvenliği**: Full TypeScript desteği
 
-There are several ways of editing your application.
+## Kurulum
 
-**Use Lovable**
+### Gereksinimler
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7e6e0b76-c36d-4501-b26a-dade9e5327e4) and start prompting.
+- Node.js 18+
+- npm veya yarn
 
-Changes made via Lovable will be committed automatically to this repo.
+### Adımlar
 
-**Use your preferred IDE**
+```bash
+# 1. Projeyi klonlayın
+git clone <repository-url>
+cd paketle-cozum
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# 2. Bağımlılıkları yükleyin
+npm install
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Geliştirme sunucusunu başlatın
 npm run dev
+
+# 4. Tarayıcınızda http://localhost:8080 adresini açın
 ```
 
-**Edit a file directly in GitHub**
+## Geliştirme
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Mevcut Komutlar
 
-**Use GitHub Codespaces**
+```bash
+# Geliştirme sunucusunu başlat
+npm run dev
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Production build oluştur
+npm run build
 
-## What technologies are used for this project?
+# Development build oluştur
+npm run build:dev
 
-This project is built with:
+# Kodu kontrol et (linting)
+npm run lint
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Build'i önizle
+npm run preview
+```
 
-## How can I deploy this project?
+## Teknolojiler
 
-Simply open [Lovable](https://lovable.dev/projects/7e6e0b76-c36d-4501-b26a-dade9e5327e4) and click on Share -> Publish.
+Bu proje aşağıdaki teknolojiler kullanılarak geliştirilmiştir:
 
-## Can I connect a custom domain to my Lovable project?
+- **Vite** - Hızlı build tool ve dev server
+- **React 18** - Modern UI kütüphanesi
+- **TypeScript** - Tip güvenliği
+- **shadcn/ui** - Modern UI bileşenleri
+- **Tailwind CSS** - Utility-first CSS framework
+- **React Router** - Client-side routing
+- **React Hook Form** - Form yönetimi
+- **Zod** - Schema validation
+- **Lucide React** - Modern ikonlar
 
-Yes, you can!
+## Proje Yapısı
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+src/
+├── components/          # React bileşenleri
+│   ├── ui/             # shadcn/ui bileşenleri
+│   ├── Header.tsx      # Site başlığı
+│   ├── Hero.tsx        # Ana hero bölümü
+│   ├── Footer.tsx      # Site alt bilgisi
+│   └── ...
+├── pages/              # Sayfa bileşenleri
+│   ├── Index.tsx       # Ana sayfa
+│   └── NotFound.tsx    # 404 sayfası
+├── hooks/              # Custom React hooks
+├── lib/                # Utility fonksiyonları
+└── assets/             # Statik dosyalar
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Deployment
+
+### Vercel (Önerilen)
+
+```bash
+# Vercel CLI kurulumu
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Netlify
+
+```bash
+# Build
+npm run build
+
+# dist/ klasörünü Netlify'a yükleyin
+```
+
+### Diğer Platformlar
+
+Herhangi bir statik hosting servisi kullanabilirsiniz:
+- GitHub Pages
+- Firebase Hosting
+- AWS S3 + CloudFront
+- DigitalOcean App Platform
+
+## Katkıda Bulunma
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Add amazing feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request oluşturun
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır.

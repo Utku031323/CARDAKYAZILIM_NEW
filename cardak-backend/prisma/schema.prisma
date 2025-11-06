@@ -1,0 +1,160 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User model for admin authentication
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(MANAGER)
+  isActive  Boolean  @default(true)
+  lastLogin DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  quotes    Quote[]
+  onboarding Onboarding[]
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  VIEWER
+}
+
+// Quote Request model
+model Quote {
+  id                  String   @id @default(cuid())
+  companyName         String
+  contactName         String
+  email               String
+  phone               String
+  monthlyOrderCount   Int
+  productTypes        String   // JSON array stored as string
+  specialRequirements String?
+  hasFragileItems     Boolean  @default(false)
+  needsCustomPackaging Boolean @default(false)
+  preferredStartDate  String?
+  calculatedPrice     Float?
+  status              QuoteStatus @default(PENDING)
+  notes               String?
+  createdBy           String
+  user                User     @relation(fields: [createdBy], references: [id])
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([createdBy])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum QuoteStatus {
+  PENDING
+  REVIEWED
+  QUOTED
+  ACCEPTED
+  REJECTED
+}
+
+// Onboarding Submission model
+model Onboarding {
+  id            String   @id @default(cuid())
+  companyName   String
+  contactName   String
+  email         String
+  phone         String
+  currentStep   Int      @default(1)
+  status        OnboardingStatus @default(PENDING)
+  createdBy     String
+  user          User     @relation(fields: [createdBy], references: [id])
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  steps         OnboardingStep[]
+
+  @@index([createdBy])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum OnboardingStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  REJECTED
+}
+
+// Onboarding Step model
+model OnboardingStep {
+  id            String   @id @default(cuid())
+  onboardingId  String
+  onboarding    Onboarding @relation(fields: [onboardingId], references: [id], onDelete: Cascade)
+  stepNumber    Int
+  data          Json?
+  completedAt   DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@unique([onboardingId, stepNumber])
+  @@index([onboardingId])
+}
+
+// Pricing Tier model
+model PricingTier {
+  id              String   @id @default(cuid())
+  name            String
+  monthlyPrice    Float
+  pricePerOrder   Float
+  description     String
+  features        String   // JSON array stored as string
+  orderVolumeMin  Int
+  orderVolumeMax  Int?
+  status          PricingStatus @default(ACTIVE)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+}
+
+enum PricingStatus {
+  ACTIVE
+  INACTIVE
+}
+
+// Settings model
+model Settings {
+  id              String   @id @default(cuid())
+  key             String   @unique
+  value           Json
+  updatedAt       DateTime @updatedAt
+}
+
+// Audit Log model
+model AuditLog {
+  id            String   @id @default(cuid())
+  userId        String?
+  action        String
+  resourceType  String
+  resourceId    String?
+  changes       Json?
+  ipAddress     String?
+  userAgent     String?
+  createdAt     DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+  @@index([createdAt])
+}
+

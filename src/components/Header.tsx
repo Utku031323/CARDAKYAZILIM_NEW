@@ -1,17 +1,18 @@
 import { Package, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="fixed top-0 w-full bg-card/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center space-x-2">
-          <Package className="h-8 w-8 text-primary" />
-          <h1 className="text-xl font-bold text-foreground">Çardak Paketleme</h1>
-        </div>
+      <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
+        <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Package className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+          <h1 className="text-lg sm:text-xl font-bold text-foreground">Çardak Paketleme</h1>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
@@ -29,20 +30,25 @@ const Header = () => {
           </a>
         </nav>
 
-        <div className="hidden md:flex items-center space-x-4">
-          <Button variant="outline">Teklif Al</Button>
-          <Button>Başla</Button>
+        <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          <Button variant="outline" size="sm" className="lg:size-default" asChild>
+            <Link to="/teklif-al">Teklif Al</Link>
+          </Button>
+          <Button size="sm" className="lg:size-default" asChild>
+            <Link to="/basla">Başla</Link>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden p-2 -mr-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
           {isMenuOpen ? (
-            <X className="h-6 w-6 text-foreground" />
+            <X className="h-5 w-5 text-foreground" />
           ) : (
-            <Menu className="h-6 w-6 text-foreground" />
+            <Menu className="h-5 w-5 text-foreground" />
           )}
         </button>
       </div>
@@ -80,8 +86,12 @@ const Header = () => {
               İletişim
             </a>
             <div className="flex flex-col space-y-2 pt-4">
-              <Button variant="outline">Teklif Al</Button>
-              <Button>Başla</Button>
+              <Button variant="outline" asChild>
+                <Link to="/teklif-al">Teklif Al</Link>
+              </Button>
+              <Button asChild>
+                <Link to="/basla">Başla</Link>
+              </Button>
             </div>
           </nav>
         </div>
