@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { 
-  ArrowLeft, 
-  ArrowRight, 
-  CheckCircle, 
-  Package, 
-  Truck, 
-  CreditCard, 
-  Users, 
+import {
+  ArrowLeft,
+  ArrowRight,
+  CheckCircle,
+  Package,
+  Truck,
+  CreditCard,
+  Users,
   Clock,
   Shield,
   Phone,
@@ -25,6 +25,11 @@ import Footer from "@/components/Footer";
 const Basla = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 4;
+
+  // Sayfa yüklendiğinde scroll pozisyonunu en üste ayarla
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const steps = [
     {
@@ -50,7 +55,7 @@ const Basla = () => {
     },
     {
       id: 4,
-      title: "Başlangıç",
+      title: "Ürün Kabülü",
       description: "Hizmetiniz aktif hale geliyor",
       icon: CheckCircle,
       completed: currentStep > 4,
@@ -199,7 +204,7 @@ const Basla = () => {
                         </li>
                         <li className="flex items-center space-x-2">
                           <FileText className="h-4 w-4 text-primary" />
-                          <span className="text-sm">E-ticaret platform bilgileri</span>
+                          <span className="text-sm">API kodları</span>
                         </li>
                       </ul>
                     </div>
@@ -226,6 +231,11 @@ const Basla = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p className="text-sm text-blue-800">
+                      <strong>ℹ️ Bilgilendirme:</strong> Hizmet ücreti ayın 15'inden 15'ine hesaplanacaktır.
+                    </p>
+                  </div>
                   <div className="grid md:grid-cols-3 gap-4">
                     <Card className="border-primary/20">
                       <CardHeader className="text-center">
@@ -236,7 +246,7 @@ const Basla = () => {
                         <ul className="space-y-2 text-sm">
                           <li>• Güvenli ambalajlama</li>
                           <li>• Hızlı işlem süresi</li>
-                          <li>• Sabit fiyat garantisi</li>
+                          <li>• Adet başı şeffaf fiyatlandırma</li>
                         </ul>
                       </CardContent>
                     </Card>
@@ -287,7 +297,7 @@ const Basla = () => {
                     <div>
                       <h3 className="font-semibold text-foreground mb-4">Desteklenen Platformlar</h3>
                       <div className="grid grid-cols-2 gap-2">
-                        {["Shopify", "WooCommerce", "Magento", "OpenCart", "PrestaShop", "Ticimax", "İdeasoft", "Diğer"].map((platform) => (
+                        {["Shopify", "n11", "Hepsiburada", "Trendyol"].map((platform) => (
                           <div key={platform} className="flex items-center space-x-2 p-2 border rounded">
                             <CheckCircle className="h-4 w-4 text-success-green" />
                             <span className="text-sm">{platform}</span>

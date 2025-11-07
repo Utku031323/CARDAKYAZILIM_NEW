@@ -6,18 +6,18 @@ const AdvantagesSection = () => {
   const advantages = [
     {
       icon: Weight,
-      title: "Ağırlık Sınırı Yok",
-      description: "Paketinizin ağırlığı fiyatı etkilemez. İster 100g ister 10kg olsun, aynı fiyat."
+      title: "Adet Başı Fiyatlandırma",
+      description: "Paket sayısına göre dinamik fiyatlandırma. Daha fazla paket = daha düşük birim fiyat."
     },
     {
       icon: Ruler,
-      title: "Boyut Farketmez",
-      description: "Küçük kutu veya büyük paket fark etmez. Sabit fiyat garantisi ile hizmet veriyoruz."
+      title: "Şeffaf Hesaplama",
+      description: "Tüm fiyatlar açık ve anlaşılır. Gizli maliyet yok, ne görürseniz onu ödersiniz."
     },
     {
       icon: Package2,
-      title: "İçerik Bağımsız",
-      description: "Ne paketlediğiniz önemli değil. Elektronik, giyim, kitap - hepsi aynı fiyat."
+      title: "Esnek Paket Türleri",
+      description: "Balonlu Poşet, 1-3 Desi Kutu - ihtiyacınıza uygun paket seçenekleri."
     },
     {
       icon: Star,
@@ -44,8 +44,8 @@ const AdvantagesSection = () => {
             Bizim Farkımız
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Sektördeki tek sabit fiyat garantili paketleme hizmeti. 
-            Boyut, ağırlık ve içerik hiçbir şekilde fiyatınızı etkilemez.
+            Adet başı şeffaf fiyatlandırma ile işletmenizin bütçesini kontrol edin.
+            Dinamik fiyat hesaplama ve profesyonel paketleme hizmeti.
           </p>
         </div>
 
@@ -88,10 +88,10 @@ const AdvantagesSection = () => {
         <Card className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">
-              🎯 Neden Çardak Paketleme?
+              🎯 Neden Chardak?
             </CardTitle>
             <CardDescription className="text-primary-foreground/90 text-lg">
-              Sektörde tek olan sabit fiyat modelimiz ile işinizi kolaylaştırıyoruz
+              Şeffaf fiyatlandırma ve dinamik hesaplama ile işinizi kolaylaştırıyoruz
             </CardDescription>
           </CardHeader>
           <CardContent>

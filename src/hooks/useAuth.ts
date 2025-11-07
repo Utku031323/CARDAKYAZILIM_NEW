@@ -92,38 +92,82 @@ export const useAuth = () => {
     setState((prev) => ({ ...prev, isLoading: true, error: null }));
 
     try {
-      // Call real API
-      const response = await apiClient.post<LoginResponse>("/auth/login", {
-        email,
-        password,
-      });
+      // Demo credentials for testing
+      const demoCredentials = [
+        { email: "admin@cardak.com", password: "admin123", role: "admin" },
+        { email: "manager@cardak.com", password: "manager123", role: "manager" },
+      ];
 
-      if (!response.data) {
-        throw new Error("Giriş başarısız oldu");
+      // Check if credentials match demo accounts
+      const demoUser = demoCredentials.find(
+        (cred) => cred.email === email && cred.password === password
+      );
+
+      if (demoUser) {
+        // Demo login - create mock tokens and user
+        const mockAccessToken = `mock_access_token_${Date.now()}`;
+        const mockRefreshToken = `mock_refresh_token_${Date.now()}`;
+
+        const user: AdminUser = {
+          id: `user_${Date.now()}`,
+          email: demoUser.email,
+          name: demoUser.email.split("@")[0],
+          role: demoUser.role as "admin" | "manager" | "viewer",
+          createdAt: new Date(),
+        };
+
+        // Store tokens and user in localStorage
+        localStorage.setItem("accessToken", mockAccessToken);
+        localStorage.setItem("refreshToken", mockRefreshToken);
+        localStorage.setItem("user", JSON.stringify(user));
+
+        setState({
+          user,
+          isAuthenticated: true,
+          isLoading: false,
+          error: null,
+        });
+
+        return;
       }
 
-      const { user: apiUser, accessToken, refreshToken } = response.data;
+      // Try to call real API if credentials don't match demo accounts
+      try {
+        const response = await apiClient.post<LoginResponse>("/auth/login", {
+          email,
+          password,
+        });
 
-      // Map API response to AdminUser
-      const user: AdminUser = {
-        id: apiUser.id,
-        email: apiUser.email,
-        name: apiUser.email.split("@")[0], // Use email prefix as name
-        role: apiUser.role as "admin" | "manager" | "viewer",
-        createdAt: new Date(),
-      };
+        if (!response.data) {
+          throw new Error("Giriş başarısız oldu");
+        }
 
-      // Store tokens and user in localStorage
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem("refreshToken", refreshToken);
-      localStorage.setItem("user", JSON.stringify(user));
+        const { user: apiUser, accessToken, refreshToken } = response.data;
 
-      setState({
-        user,
-        isAuthenticated: true,
-        isLoading: false,
-        error: null,
-      });
+        // Map API response to AdminUser
+        const user: AdminUser = {
+          id: apiUser.id,
+          email: apiUser.email,
+          name: apiUser.email.split("@")[0],
+          role: apiUser.role as "admin" | "manager" | "viewer",
+          createdAt: new Date(),
+        };
+
+        // Store tokens and user in localStorage
+        localStorage.setItem("accessToken", accessToken);
+        localStorage.setItem("refreshToken", refreshToken);
+        localStorage.setItem("user", JSON.stringify(user));
+
+        setState({
+          user,
+          isAuthenticated: true,
+          isLoading: false,
+          error: null,
+        });
+      } catch (apiError) {
+        // API call failed, show error
+        throw new Error("Geçersiz e-posta veya şifre");
+      }
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Giriş başarısız oldu";

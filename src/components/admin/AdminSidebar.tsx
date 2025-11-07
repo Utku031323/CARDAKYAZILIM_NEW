@@ -60,9 +60,9 @@ const AdminSidebar = () => {
       {/* Logo */}
       <div className="p-6 border-b border-slate-700">
         <div className="flex items-center gap-2">
-          <Package className="h-8 w-8 text-blue-400" />
+          <img src="/chardak-logo.svg" alt="Chardak Logo" className="h-8 w-8" />
           <div>
-            <h1 className="text-xl font-bold">Çardak</h1>
+            <h1 className="text-xl font-bold">Chardak</h1>
             <p className="text-xs text-slate-400">Yönetim Paneli</p>
           </div>
         </div>

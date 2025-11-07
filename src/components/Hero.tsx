@@ -17,15 +17,15 @@ const Hero = () => {
                 <span className="text-primary block">Paketleme Hizmeti</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                Boyut, ağırlık ve içerik fark etmeksizin sabit fiyat garantisiyle
-                profesyonel paketleme hizmeti. Siparişlerinizi güvenle teslim edelim.
+                Adet başı şeffaf fiyatlandırma ile profesyonel paketleme hizmeti.
+                Dinamik fiyat hesaplama ve güvenilir depolama çözümleri.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-success-green flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground">Sabit Fiyat Garantisi</span>
+                <span className="text-sm sm:text-base text-foreground">Şeffaf Fiyatlandırma</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-success-green flex-shrink-0" />
@@ -69,7 +69,7 @@ const Hero = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src={heroImage}
-                alt="Çardak Paketleme profesyonel paketleme tesisi - modern depo ve paketleme ekipmanları"
+                alt="Chardak depolama ve paketleme tesisi - modern depo, paletler ve paketleme ekipmanları"
                 className="w-full h-[300px] sm:h-[400px] lg:h-[600px] object-cover"
                 loading="eager"
                 decoding="async"

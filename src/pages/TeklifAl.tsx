@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,10 +11,18 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Package, Clock, Shield, CheckCircle, ArrowLeft } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Calculator, Package, Clock, Shield, CheckCircle, ArrowLeft, AlertCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+// Initialize EmailJS with public key
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "test_public_key";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "test_service";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "test_template";
+
+emailjs.init(EMAILJS_PUBLIC_KEY);
 
 const quoteSchema = z.object({
   companyName: z.string().min(2, "Şirket adı en az 2 karakter olmalıdır"),
@@ -33,6 +42,12 @@ type QuoteFormData = z.infer<typeof quoteSchema>;
 const TeklifAl = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [calculatedPrice, setCalculatedPrice] = useState<number | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Sayfa yüklendiğinde scroll pozisyonunu en üste ayarla
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const {
     register,
@@ -73,10 +88,66 @@ const TeklifAl = () => {
   }, [monthlyOrderCount]);
 
   const onSubmit = async (data: QuoteFormData) => {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log("Quote request:", data);
-    setIsSubmitted(true);
+    setSubmitError(null);
+
+    try {
+      // Prepare email content
+      const emailContent = `
+Yeni Teklif Talebi
+
+ŞIRKET BİLGİLERİ:
+- Şirket Adı: ${data.companyName}
+- İletişim Kişisi: ${data.contactName}
+- E-posta: ${data.email}
+- Telefon: ${data.phone}
+
+SİPARİŞ BİLGİLERİ:
+- Aylık Sipariş Sayısı: ${data.monthlyOrderCount}
+- Ürün Türleri: ${data.productTypes.join(", ")}
+
+EK GEREKSİNİMLER:
+- Kırılabilir Ürün: ${data.hasFragileItems ? "Evet" : "Hayır"}
+- Özel Paketleme: ${data.needsCustomPackaging ? "Evet" : "Hayır"}
+- Tercih Edilen Başlangıç Tarihi: ${data.preferredStartDate || "Belirtilmedi"}
+
+ÖZEL İSTEKLER:
+${data.specialRequirements || "Belirtilmedi"}
+      `.trim();
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          to_email: "chardakstorage@gmail.com",
+          from_email: data.email,
+          from_name: data.contactName,
+          subject: `Yeni Teklif Talebi - ${data.companyName}`,
+          message: emailContent,
+          company_name: data.companyName,
+          contact_name: data.contactName,
+          phone: data.phone,
+          monthly_orders: data.monthlyOrderCount,
+          product_types: data.productTypes.join(", "),
+          has_fragile_items: data.hasFragileItems ? "Evet" : "Hayır",
+          needs_custom_packaging: data.needsCustomPackaging ? "Evet" : "Hayır",
+          preferred_start_date: data.preferredStartDate || "Belirtilmedi",
+          special_requirements: data.specialRequirements || "Belirtilmedi",
+          date: new Date().toLocaleDateString("tr-TR"),
+        }
+      );
+
+      if (response.status === 200) {
+        console.log("Email sent successfully:", response);
+        setIsSubmitted(true);
+      } else {
+        throw new Error("E-posta gönderilemedi");
+      }
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : "Teklif gönderimi başarısız oldu. Lütfen daha sonra tekrar deneyiniz.";
+      setSubmitError(errorMessage);
+      console.error("Error sending email:", error);
+    }
   };
 
   const productTypeOptions = [
@@ -169,6 +240,14 @@ const TeklifAl = () => {
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    {/* Error Alert */}
+                    {submitError && (
+                      <Alert variant="destructive">
+                        <AlertCircle className="h-4 w-4" />
+                        <AlertDescription>{submitError}</AlertDescription>
+                      </Alert>
+                    )}
+
                     {/* Company Information */}
                     <div className="space-y-4">
                       <h3 className="text-lg font-semibold text-foreground">

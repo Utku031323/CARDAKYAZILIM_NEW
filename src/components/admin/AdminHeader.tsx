@@ -28,7 +28,7 @@ const AdminHeader = () => {
       {/* Left Side - Title */}
       <div className="hidden md:block">
         <h2 className="text-2xl font-bold text-slate-900">Yönetim Paneli</h2>
-        <p className="text-sm text-slate-500">Çardak Paketleme</p>
+        <p className="text-sm text-slate-500">Chardak</p>
       </div>
 
       {/* Right Side - Actions */}

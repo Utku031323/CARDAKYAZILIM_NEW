@@ -1,0 +1,29 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Globe circle -->
+  <circle cx="250" cy="150" r="100" fill="none" stroke="#1e3a5f" stroke-width="8"/>
+  
+  <!-- Horizontal lines -->
+  <ellipse cx="250" cy="150" rx="100" ry="30" fill="none" stroke="#1e3a5f" stroke-width="8"/>
+  <ellipse cx="250" cy="150" rx="100" ry="60" fill="none" stroke="#1e3a5f" stroke-width="8"/>
+  
+  <!-- Vertical lines -->
+  <line x1="250" y1="50" x2="250" y2="250" stroke="#1e3a5f" stroke-width="8"/>
+  <path d="M 180 100 Q 250 150 180 200" fill="none" stroke="#1e3a5f" stroke-width="8"/>
+  <path d="M 320 100 Q 250 150 320 200" fill="none" stroke="#1e3a5f" stroke-width="8"/>
+  
+  <!-- Center hexagon -->
+  <g transform="translate(250, 150)">
+    <polygon points="0,-20 17.3,-10 17.3,10 0,20 -17.3,10 -17.3,-10" fill="none" stroke="#1e3a5f" stroke-width="6"/>
+  </g>
+  
+  <!-- Text: CHARDAK -->
+  <text x="250" y="320" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#1e3a5f">
+    CHARDAK
+  </text>
+  
+  <!-- Tagline -->
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#0ea5e9">
+    STORAGE &amp; FULFILMENT SOLUTIONS
+  </text>
+</svg>
+
