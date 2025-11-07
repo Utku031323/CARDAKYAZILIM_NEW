@@ -13,7 +13,7 @@ const PricingSection = () => {
     {
       id: 1,
       name: "Balonlu Poşet",
-      price: "",
+      price: "28",
       description: "Hafif ürünler için ideal",
       features: ["Hava yastıklı koruma", "Sabit fiyat", "Hızlı işlem", "7/24 destek"],
       icon: Package,
@@ -37,7 +37,7 @@ const PricingSection = () => {
     {
       id: 2,
       name: "1 Desi Kutu",
-      price: "",
+      price: "34",
       description: "Küçük ürünler için",
       features: ["Standart koruma", "Sabit fiyat", "Hızlı işlem", "7/24 destek"],
       icon: Package,
@@ -61,7 +61,7 @@ const PricingSection = () => {
     {
       id: 3,
       name: "2 Desi Kutu",
-      price: "",
+      price: "38",
       description: "Orta boy ürünler için",
       features: ["Güçlü koruma", "Sabit fiyat", "Hızlı işlem", "7/24 destek"],
       icon: Package,
@@ -86,7 +86,7 @@ const PricingSection = () => {
     {
       id: 4,
       name: "3 Desi Kutu",
-      price: "",
+      price: "42",
       description: "Büyük ürünler için",
       features: ["Maksimum koruma", "Sabit fiyat", "Hızlı işlem", "7/24 destek"],
       icon: Package,
