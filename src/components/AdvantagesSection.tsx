@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Weight, Ruler, Package2, Star, Clock, Shield } from "lucide-react";
-import teamImage from "@/assets/team-service.jpg";
+import teamImage from "@/assets/chardak_2.jpg";
 
 const AdvantagesSection = () => {
   const advantages = [
