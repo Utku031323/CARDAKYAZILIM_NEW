@@ -11,7 +11,11 @@ export default defineConfig(() => ({
   preview: {
     host: "0.0.0.0",
     port: process.env.PORT || 8080,
-    allowedHosts: ["cardakyazilimnew-production.up.railway.app"],
+    allowedHosts: [
+      "cardakyazilimnew-production.up.railway.app",
+      "chardak.tr",     // Eklenen Alan Adınız
+      "www.chardak.tr"  // Eklenen www Uzantısı
+    ],
   },
   plugins: [react()],
   resolve: {
