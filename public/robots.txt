@@ -14,7 +14,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://cardakpaketleme.com/sitemap.xml
+Sitemap: https://chardak.tr/sitemap.xml
 
 # Crawl delay
 Crawl-delay: 1
