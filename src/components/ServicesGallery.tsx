@@ -6,28 +6,28 @@ const ServicesGallery = () => {
   const services = [
     {
       icon: Package,
-      title: "Profesyonel E-ticaret Paketleme",
-      description: "Her türlü ürün için güvenli ve estetik paketleme çözümleri"
+      title: "Otomatik Sipariş Fulfillment",
+      description: "Shopify, n11, Hepsiburada ve Trendyol'dan siparişleri otomatik olarak alın ve işleyin"
     },
     {
       icon: Truck,
-      title: "Kargo Hazır Paketleme",
-      description: "Kargo sürecinde maksimum koruma sağlayan özel paketleme"
+      title: "Profesyonel Paketleme & Kargo",
+      description: "Müşterilerinizin ürünlerini güvenli şekilde paketleyin ve kargo ile gönderin"
     },
     {
       icon: Zap,
-      title: "Adet Bazlı Fiyatlandırma",
-      description: "Boyut, ağırlık ve içerik fark etmeksizin sadece adet sayısına göre fiyatlandırma"
+      title: "Ölçeklenebilir Fiyatlandırma",
+      description: "Sipariş hacminiz arttıkça birim fiyat düşer. Küçük işletmeden büyük mağazaya uyum sağlar"
     },
     {
       icon: Award,
-      title: "Kaliteli Malzeme Kullanımı",
-      description: "Dayanıklı ve çevre dostu paketleme malzemeleri"
+      title: "Entegre Depolama Hizmeti",
+      description: "Ürünlerinizi güvenli depolarda saklayın ve ihtiyaç duyduğunuzda paketleyin"
     },
     {
       icon: Clock,
-      title: "Hızlı ve Güvenilir Hizmet",
-      description: "24 saat içinde paketleme ve kargo hazırlık süreci"
+      title: "Hızlı Fulfillment Süreci",
+      description: "Siparişler 24 saat içinde paketlenir ve kargoya teslim edilir"
     }
   ];
 
@@ -40,12 +40,11 @@ const ServicesGallery = () => {
             Hizmetlerimiz
           </Badge>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-            Profesyonel Paketleme Hizmetleri
+            E-Ticaret İşletmeleri İçin Tam Fulfillment Çözümü
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Her türlü e-ticaret ürününüz için <strong>boyut, ağırlık ve içerik fark etmeksizin</strong>
-            adet bazlı şeffaf fiyatlandırma ile profesyonel paketleme hizmeti sunuyoruz.
-            <strong>Daha fazla paket = daha düşük birim fiyat</strong>
+            Online mağazanızın siparişlerini tamamen yönetin. <strong>Platform entegrasyonu, otomatik fulfillment ve ölçeklenebilir fiyatlandırma</strong>
+            ile işinizi büyütün. <strong>Daha fazla sipariş = daha düşük birim maliyet</strong>
           </p>
         </div>
 
@@ -53,24 +52,24 @@ const ServicesGallery = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-16">
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <Star className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Adet Bazlı Fiyatlandırma</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Platform Entegrasyonu</h3>
             <p className="text-muted-foreground text-sm">
-              Boyut ve ağırlık fark etmeksizin, sadece adet sayısına göre fiyatlandırma.
-              Sipariş hacmi arttıkça birim fiyat düşer.
+              Shopify, n11, Hepsiburada ve Trendyol ile doğrudan bağlantı.
+              Siparişler otomatik olarak sisteme aktarılır.
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Hızlı Teslimat</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Hızlı Fulfillment</h3>
             <p className="text-muted-foreground">
-              24 saat içinde paketleme ve kargo hazırlık işlemleri
+              Siparişler 24 saat içinde paketlenir ve kargoya teslim edilir
             </p>
           </Card>
           <Card className="p-6 text-center hover:shadow-lg transition-shadow">
             <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">Güvenli Koruma</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">Güvenli Depolama</h3>
             <p className="text-muted-foreground">
-              Kaliteli malzemelerle maksimum güvenlik garantisi
+              Ürünleriniz profesyonel depolarda güvenli şekilde saklanır
             </p>
           </Card>
         </div>
@@ -99,25 +98,25 @@ const ServicesGallery = () => {
         <div className="text-center mt-16">
           <Card className="p-8 bg-primary/5 border-primary/20">
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              Şeffaf Fiyatlandırma ile Paketleme Hizmeti
+              E-Ticaret İşletmenizi Ölçeklendirebilir Fulfillment ile Büyütün
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              İster 1 paket, ister 10.000 paket - her biri için aynı kalitede hizmet.
-              Adet bazlı fiyatlandırma sayesinde sipariş hacminiz arttıkça birim fiyat düşer.
-              Boyut, ağırlık ve içerik hiçbir zaman fiyatı etkilemez.
+              Küçük başlayın, büyüyün. İster 100 sipariş, ister 100.000 sipariş -
+              aynı profesyonel hizmet ve ölçeklenebilir fiyatlandırma.
+              Siparişleriniz otomatik olarak işlenir, paketlenir ve gönderilir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Badge variant="outline" className="text-base py-2 px-4">
                 <Package className="h-4 w-4 mr-2" />
-                Adet Bazlı Fiyat
+                Otomatik Fulfillment
               </Badge>
               <Badge variant="outline" className="text-base py-2 px-4">
                 <Clock className="h-4 w-4 mr-2" />
-                24 Saat İşlem
+                24 Saat Işlem
               </Badge>
               <Badge variant="outline" className="text-base py-2 px-4">
                 <Shield className="h-4 w-4 mr-2" />
-                Garantili Kalite
+                Ölçeklenebilir Fiyat
               </Badge>
             </div>
           </Card>

@@ -13,54 +13,54 @@ const Hero = () => {
           <div className="space-y-6 lg:space-y-8">
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                E-Ticaret
-                <span className="text-primary block">Paketleme Hizmeti</span>
+                E-Ticaret İşletmeleri İçin
+                <span className="text-primary block">Fulfillment Çözümü</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                Adet başı şeffaf fiyatlandırma ile profesyonel paketleme hizmeti.
-                Dinamik fiyat hesaplama ve güvenilir depolama çözümleri.
+                Online mağazanızın siparişlerini paketleyin, depolayın ve gönderin.
+                Shopify, n11, Hepsiburada ve Trendyol entegrasyonu ile tam otomasyonlu fulfillment hizmeti.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-success-green flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground">Şeffaf Fiyatlandırma</span>
+                <span className="text-sm sm:text-base text-foreground">Platform Entegrasyonu</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-success-green flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground">24 Saat Hızlı Ödeme</span>
+                <span className="text-sm sm:text-base text-foreground">24 Saat Fulfillment</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-success-green flex-shrink-0" />
-                <span className="text-sm sm:text-base text-foreground">Profesyonel Paketleme</span>
+                <span className="text-sm sm:text-base text-foreground">Ölçeklenebilir Çözüm</span>
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto" asChild>
-                <Link to="/basla">Hemen Başla</Link>
+                <Link to="/basla">İşletmenizi Bağlayın</Link>
               </Button>
               <Button variant="outline" size="lg" className="text-base sm:text-lg px-6 sm:px-8 w-full sm:w-auto" asChild>
-                <Link to="/teklif-al">Fiyat Hesapla</Link>
+                <Link to="/teklif-al">Fiyat Teklifi Al</Link>
               </Button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8">
               <Card className="p-3 sm:p-4 text-center shadow-sm hover:shadow-md transition-shadow">
                 <Package className="h-6 w-6 sm:h-8 sm:w-8 text-primary mx-auto mb-2" />
-                <div className="text-xl sm:text-2xl font-bold text-foreground">1000+</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Aylık Paket</div>
+                <div className="text-xl sm:text-2xl font-bold text-foreground">50+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">İşletme Müşterisi</div>
               </Card>
               <Card className="p-3 sm:p-4 text-center shadow-sm hover:shadow-md transition-shadow">
                 <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-primary mx-auto mb-2" />
                 <div className="text-xl sm:text-2xl font-bold text-foreground">24</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Saat İçinde</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Saat Fulfillment</div>
               </Card>
               <Card className="p-3 sm:p-4 text-center shadow-sm hover:shadow-md transition-shadow">
                 <Shield className="h-6 w-6 sm:h-8 sm:w-8 text-primary mx-auto mb-2" />
-                <div className="text-xl sm:text-2xl font-bold text-foreground">%99.9</div>
-                <div className="text-xs sm:text-sm text-muted-foreground">Güvenilirlik</div>
+                <div className="text-xl sm:text-2xl font-bold text-foreground">4</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Platform Entegrasyonu</div>
               </Card>
             </div>
           </div>
@@ -84,8 +84,8 @@ const Hero = () => {
                   <Package className="h-4 w-4 sm:h-6 sm:w-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">Bu Ay</div>
-                  <div className="text-sm sm:text-lg font-bold text-foreground">2,847 Paket</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">Bu Ay İşlenen</div>
+                  <div className="text-sm sm:text-lg font-bold text-foreground">15,000+ Paket</div>
                 </div>
               </div>
             </Card>

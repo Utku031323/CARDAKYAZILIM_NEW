@@ -13,8 +13,6 @@ import {
   Users,
   Clock,
   Shield,
-  Phone,
-  Mail,
   FileText,
   Settings
 } from "lucide-react";
@@ -355,56 +353,30 @@ const Basla = () => {
                     </p>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <Card className="border-primary/20">
-                      <CardHeader>
-                        <CardTitle className="text-lg flex items-center space-x-2">
-                          <Phone className="h-5 w-5 text-primary" />
-                          <span>Destek Ekibimiz</span>
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-sm text-muted-foreground mb-3">
-                          7/24 müşteri desteği için bizimle iletişime geçin:
-                        </p>
-                        <div className="space-y-2">
-                          <div className="flex items-center space-x-2">
-                            <Phone className="h-4 w-4 text-primary" />
-                            <span className="text-sm">+90 (XXX) XXX XX XX</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <Mail className="h-4 w-4 text-primary" />
-                            <span className="text-sm">destek@cardakpaketleme.com</span>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                    
-                    <Card className="border-primary/20">
-                      <CardHeader>
-                        <CardTitle className="text-lg flex items-center space-x-2">
-                          <Clock className="h-5 w-5 text-primary" />
-                          <span>Sonraki Adımlar</span>
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <ul className="space-y-2 text-sm">
-                          <li className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-success-green" />
-                            <span>İlk siparişinizi gönderin</span>
-                          </li>
-                          <li className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-success-green" />
-                            <span>Paketleme sürecini takip edin</span>
-                          </li>
-                          <li className="flex items-center space-x-2">
-                            <CheckCircle className="h-4 w-4 text-success-green" />
-                            <span>Aylık raporlarınızı inceleyin</span>
-                          </li>
-                        </ul>
-                      </CardContent>
-                    </Card>
-                  </div>
+                  <Card className="border-primary/20">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center space-x-2">
+                        <Clock className="h-5 w-5 text-primary" />
+                        <span>Sonraki Adımlar</span>
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-success-green" />
+                          <span>İlk siparişinizi gönderin</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-success-green" />
+                          <span>Paketleme sürecini takip edin</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <CheckCircle className="h-4 w-4 text-success-green" />
+                          <span>Aylık raporlarınızı inceleyin</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
                 </CardContent>
               </Card>
             )}

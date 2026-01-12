@@ -6,33 +6,33 @@ const AdvantagesSection = () => {
   const advantages = [
     {
       icon: Weight,
-      title: "Adet Başı Fiyatlandırma",
-      description: "Paket sayısına göre dinamik fiyatlandırma. Daha fazla paket = daha düşük birim fiyat."
+      title: "Ölçeklenebilir Fiyatlandırma",
+      description: "Sipariş hacminiz arttıkça birim fiyat düşer. Büyüyen işletmeler için ideal."
     },
     {
       icon: Ruler,
-      title: "Şeffaf Hesaplama",
+      title: "Şeffaf Maliyet Yapısı",
       description: "Tüm fiyatlar açık ve anlaşılır. Gizli maliyet yok, ne görürseniz onu ödersiniz."
     },
     {
       icon: Package2,
-      title: "Esnek Paket Türleri",
-      description: "Balonlu Poşet, 1-3 Desi Kutu - ihtiyacınıza uygun paket seçenekleri."
+      title: "Çoklu Platform Desteği",
+      description: "Shopify, n11, Hepsiburada, Trendyol - tüm platformlarınız entegre olur."
     },
     {
       icon: Star,
-      title: "Kaliteli Malzeme",
-      description: "Tüm paketlemelerimizde premium kalite malzemeler kullanıyoruz."
+      title: "Profesyonel Paketleme",
+      description: "Müşterilerinizin ürünleri premium kalite malzemelerle paketlenir."
     },
     {
       icon: Clock,
-      title: "Hızlı İşlem",
-      description: "Siparişleriniz aynı gün içinde paketlenir ve kargoya teslim edilir."
+      title: "Hızlı Fulfillment",
+      description: "Siparişler 24 saat içinde paketlenir ve kargoya teslim edilir."
     },
     {
       icon: Shield,
-      title: "Güvenli Paketleme",
-      description: "Ürünleriniz hasarsız ulaşsın diye özel paketleme teknikleri kullanıyoruz."
+      title: "Güvenli Depolama",
+      description: "Ürünleriniz profesyonel depolarda güvenli şekilde saklanır ve yönetilir."
     }
   ];
 
@@ -41,11 +41,11 @@ const AdvantagesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Bizim Farkımız
+            Neden Chardak'ı Seçin?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Adet başı şeffaf fiyatlandırma ile işletmenizin bütçesini kontrol edin.
-            Dinamik fiyat hesaplama ve profesyonel paketleme hizmeti.
+            E-ticaret işletmeleri için tasarlanmış, ölçeklenebilir fulfillment çözümü.
+            Platform entegrasyonu, otomatik işlem ve şeffaf fiyatlandırma ile işinizi büyütün.
           </p>
         </div>
 
@@ -88,25 +88,25 @@ const AdvantagesSection = () => {
         <Card className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">
-              🎯 Neden Chardak?
+              🚀 E-Ticaret İşletmeleri İçin Tasarlandı
             </CardTitle>
             <CardDescription className="text-primary-foreground/90 text-lg">
-              Şeffaf fiyatlandırma ve dinamik hesaplama ile işinizi kolaylaştırıyoruz
+              Platform entegrasyonu, otomatik fulfillment ve ölçeklenebilir fiyatlandırma
             </CardDescription>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-3 gap-6 text-center">
               <div>
-                <div className="text-3xl font-bold mb-2">100%</div>
-                <div className="text-primary-foreground/90">Şeffaf Fiyatlandırma</div>
+                <div className="text-3xl font-bold mb-2">4+</div>
+                <div className="text-primary-foreground/90">Platform Entegrasyonu</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">0</div>
-                <div className="text-primary-foreground/90">Gizli Maliyet</div>
+                <div className="text-3xl font-bold mb-2">24h</div>
+                <div className="text-primary-foreground/90">Otomatik Fulfillment</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">24/7</div>
-                <div className="text-primary-foreground/90">Müşteri Desteği</div>
+                <div className="text-3xl font-bold mb-2">∞</div>
+                <div className="text-primary-foreground/90">Ölçeklenebilir Çözüm</div>
               </div>
             </div>
           </CardContent>
